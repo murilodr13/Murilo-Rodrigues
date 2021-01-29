@@ -24,10 +24,8 @@ echo ""
 
 echo -e " \033[0;34m Iniciando atualizações do Sistema (Sem Atualizações de Kernel) \033[0m "
 
-yum --exclude=kernel* update
+yum --exclude=kernel* update -y
 
 sleep 5
-
-yes
 
 echo -e " \033[0;32m Fim do Script \033[0m "
