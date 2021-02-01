@@ -12,6 +12,7 @@
 BLUEL="\033[1;34m"
 BLUE="\033[0;34m"
 GREEN="\033[0;32m"
+YELLOW="\033[1;33m"
 NC="\033[0m"
 
 echo ""
@@ -25,6 +26,32 @@ echo -e " ${BLUE} ====== Verificando Hostname ====== ${NC}"
 hostname
 
 sleep 3
+
+if [ $(HOSTAME) ==  "localhost.domain" ]
+then
+echo -e " ${YELLOW} == Iniciando configuração de Hostname == ${NC}"
+
+echo""
+
+su
+
+sleep 3
+
+hostnamectl set-hostname localhost_centos7
+
+sleep 3
+
+systemctl restart systemd-hostnamed
+
+echo ""
+
+echo -e " ${YELLOW} == Confirmando Alteração de Hostname == ${NC}"
+
+echo ""
+
+hostname
+
+fi
 
 echo ""
 
