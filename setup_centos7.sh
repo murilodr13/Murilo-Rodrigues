@@ -6,6 +6,7 @@
 # v.1.0 - Criação do script.                                #
 # v.1.0.1 - Adicionado o comando yum.                       #
 # v.1.0.2 - Adicionado variáveis para cores                 #
+# v.1.0.3 - Adicionado layout de pular linhas               #
 #############################################################
 
 ###########
@@ -31,7 +32,7 @@ if [ $(HOSTAME) ==  "localhost.domain" ]
 then
 echo -e " ${YELLOW} == Iniciando configuração de Hostname == ${NC}"
 
-echo""
+echo ""
 
 su
 
@@ -68,6 +69,9 @@ sudo yum --exclude=kernel* update
 
 sleep 5
 
+echo""
+
 echo -e " ${GREEN} ====== Fim do Script ====== ${NC}"
 
+echo ""
 echo ""
