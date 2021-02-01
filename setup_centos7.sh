@@ -69,3 +69,5 @@ sudo yum --exclude=kernel* update
 sleep 5
 
 echo -e " ${GREEN} ====== Fim do Script ====== ${NC}"
+
+echo ""
