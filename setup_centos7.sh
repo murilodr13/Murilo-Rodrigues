@@ -7,6 +7,7 @@
 # v.1.0.1 - Adicionado o comando yum.                       #
 # v.1.0.2 - Adicionado variáveis para cores                 #
 # v.1.0.3 - Adicionado layout de pular linhas               #
+# v.1.0.4 - Adicionado comandos para instalar rede          #
 #############################################################
 
 ###########
@@ -25,6 +26,9 @@ echo ""
 
 echo -e " ${BLUE} ====== Verificando Hostname ====== ${NC}"
 hostname
+
+echo -e " ${BLUE} ====== Instalando Dependências para Configuração de Rede ====== ${NC}"
+yum -y install net-tools
 
 sleep 3
 
