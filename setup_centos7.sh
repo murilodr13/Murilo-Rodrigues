@@ -9,6 +9,7 @@
 # v.1.0.3 - Adicionado layout de pular linhas               #
 # v.1.0.4 - Adicionado comandos para instalar rede          #
 # v.1.0.5 - Instalação SUDO e alteração de cores            #
+# v.1.0.6 - Instalação SUDO e alteração de cores            #
 #############################################################
 
 ###########
@@ -42,9 +43,9 @@ sudo yum -y install net-tools
 
 sleep 3
 
-if [ $(HOSTAME) ==  "localhost.domain" ]
+if [ $HOSTNAME != "" ]
 then
-echo -e " ${YELLOW} == Iniciando configuração de Hostname == ${NC}"
+echo -e " ${YELLOW} ====== Iniciando configuração de Hostname ====== ${NC} "
 
 echo ""
 
@@ -60,11 +61,23 @@ systemctl restart systemd-hostnamed
 
 echo ""
 
-echo -e " ${YELLOW} == Confirmando Alteração de Hostname == ${NC}"
+echo -e " ${YELLOW} ====== Confirmando Alteração de Hostname ====== ${NC} "
 
 echo ""
 
 hostname
+
+else
+
+echo " ${GREEN} O hostname já está configurado, caso queira alterar, faça manualmente ! ${NC} "
+
+echo ""
+
+hostname
+
+sleep 1
+
+echo ""
 
 fi
 
