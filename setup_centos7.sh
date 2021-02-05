@@ -55,7 +55,7 @@ echo ""
 
 whoami
 
-if [ "$WHOAMI" != "root" ]
+if [ $WHOAMI != "root" ]
 then
 echo -e " ${RED} ====== Você não está logado como ROOT ! Digite a senha do ROOT para prosseguir  ====== ${NC} "
 
