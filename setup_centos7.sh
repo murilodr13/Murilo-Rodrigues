@@ -54,12 +54,6 @@ echo ""
 
 whoami
 
-if [ $HOSTNAME != "" ]
-then
-echo -e " ${YELLOW} ====== Iniciando configuração de Hostname ====== ${NC} "
-
-echo ""
-
 echo -e " ${YELLOW} ====== Verificação de Usuário ====== ${NC} "
 
 echo ""
@@ -75,6 +69,16 @@ echo ""
 su
 
 else
+
+echo ""
+
+fi
+
+if [ $HOSTNAME != "" ]
+then
+echo -e " ${YELLOW} ====== Iniciando configuração de Hostname ====== ${NC} "
+
+echo ""
 
 sleep 3
 
@@ -105,13 +109,6 @@ sleep 1
 echo ""
 
 fi
-
-echo ""
-
-echo -e " ${BLUE} ====== Verificando Usuário ====== ${NC}"
-whoami
-
-sleep 3
 
 echo ""
 
