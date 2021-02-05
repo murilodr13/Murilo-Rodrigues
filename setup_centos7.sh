@@ -54,13 +54,7 @@ echo ""
 
 whoami
 
-echo -e " ${YELLOW} ====== Verificação de Usuário ====== ${NC} "
-
-echo ""
-
-whoami
-
-if [ $WHOAMI != "root" ]
+if [ "$WHOAMI" != "root" ]
 then
 echo -e " ${RED} ====== Você não está logado como ROOT ! Digite a senha do ROOT para prosseguir  ====== ${NC} "
 
@@ -74,7 +68,7 @@ echo ""
 
 fi
 
-if [ $HOSTNAME != "" ]
+if [ "$HOSTNAME" != "" ]
 then
 echo -e " ${YELLOW} ====== Iniciando configuração de Hostname ====== ${NC} "
 
