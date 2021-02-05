@@ -8,6 +8,7 @@
 # v.1.0.2 - Adicionado variáveis para cores                 #
 # v.1.0.3 - Adicionado layout de pular linhas               #
 # v.1.0.4 - Adicionado comandos para instalar rede          #
+# v.1.0.5 - Instalação SUDO e alteração de cores            #
 #############################################################
 
 ###########
@@ -24,11 +25,20 @@ echo -e " ${BLUEL} ====== Script para Configuração Inicial de Servidor CentosO
 
 echo ""
 
-echo -e " ${BLUE} ====== Verificando Hostname ====== ${NC}"
+echo -e " ${YELLOW} ====== Verificando Hostname ====== ${NC}"
 hostname
 
-echo -e " ${BLUE} ====== Instalando Dependências para Configuração de Rede ====== ${NC}"
-yum -y install net-tools
+echo ""
+
+echo -e " ${YELLOW} ====== Instalação do SUDO ====== ${NC}"
+yum -y install sudo
+
+echo ""
+
+sleep 3
+
+echo -e " ${YELLOW} ====== Instalando Dependências para Configuração de Rede ====== ${NC}"
+sudo yum -y install net-tools
 
 sleep 3
 
