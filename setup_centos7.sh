@@ -10,6 +10,7 @@
 # v.1.0.4 - Adicionado comandos para instalar rede          #
 # v.1.0.5 - Instalação SUDO e alteração de cores            #
 # v.1.0.6 - Instalação SUDO e alteração de cores            #
+# v.1.0.7 - Instalação SUDO e alteração de cores            #
 #############################################################
 
 ###########
@@ -18,6 +19,7 @@ BLUE="\033[0;34m"
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
 NC="\033[0m"
+$WHOAMI=whoami
 $HOSTNAME=hostname
 
 echo ""
@@ -46,13 +48,33 @@ sleep 3
 
 echo ""
 
+echo -e " ${YELLOW} ====== Verificação de Usuário ====== ${NC} "
+
+echo ""
+
+whoami
+
 if [ $HOSTNAME != "" ]
 then
 echo -e " ${YELLOW} ====== Iniciando configuração de Hostname ====== ${NC} "
 
 echo ""
 
+echo -e " ${YELLOW} ====== Verificação de Usuário ====== ${NC} "
+
+echo ""
+
+whoami
+
+if [ $WHOAMI != "root" ]
+then
+echo -e " ${RED} ====== Você não está logado como ROOT ! Digite a senha do ROOT para prosseguir  ====== ${NC} "
+
+echo ""
+
 su
+
+else
 
 sleep 3
 
