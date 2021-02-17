@@ -9,8 +9,8 @@
 # v.1.0.3 - Adicionado layout de pular linhas               #
 # v.1.0.4 - Adicionado comandos para instalar rede          #
 # v.1.0.5 - Instalação SUDO e alteração de cores            #
-# v.1.0.6 - Instalação SUDO e alteração de cores            #
-# v.1.0.7 - Instalação SUDO e alteração de cores            #
+# v.1.0.6 - Instalação net-tools                            #
+# v.1.0.7 - Adicionado comando SU, e reboot serviço host    #
 #############################################################
 
 ###########
