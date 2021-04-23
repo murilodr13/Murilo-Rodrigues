@@ -83,6 +83,10 @@ sleep 3
 
 systemctl restart systemd-hostnamed
 
+sleep 3
+
+bash
+
 echo ""
 
 echo -e " ${YELLOW} ====== Confirmando Alteração de Hostname ====== ${NC} "
