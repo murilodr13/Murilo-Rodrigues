@@ -11,6 +11,7 @@
 # v.1.0.5 - Instalação SUDO e alteração de cores            #
 # v.1.0.6 - Instalação net-tools                            #
 # v.1.0.7 - Adicionado comando SU e reboot serviço host     #
+# v.1.0.8 - Adicionado correção (-y) no comando yum update  #
 #############################################################
 
 ###########
@@ -113,7 +114,7 @@ echo ""
 
 echo -e " ${BLUE} ====== Iniciando atualizações do Sistema (Sem Atualizações de Kernel) ====== ${NC}"
 
-sudo yum --exclude=kernel* update
+sudo yum -y --exclude=kernel* update
 
 sleep 5
 
