@@ -9,7 +9,7 @@ echo "======================= Last Login by Username ======================="
 
 for username in $(getent passwd | cut -d ":"  -f1) ; do
     last_login=$(last $username| head -1 | awk '{ print $4, $5, $6 }')
-    if [  ${#last_login} -le 5 ]; then
+    if [ ${#last_login} -le 5 ]; then
         last_login="No info"
     fi
     hostname=$(hostname -s)
