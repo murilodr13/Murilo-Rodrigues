@@ -1,0 +1,8 @@
+---
+- hosts: centos
+  tasks:
+    - name: Install Updates CentOS
+      command: "yum -y --exclude=kernel* update"
+      become: yes
+      become_user: root
+...
