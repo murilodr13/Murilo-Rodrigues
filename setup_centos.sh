@@ -35,6 +35,7 @@ function enabling_repos() {
     cd /etc/yum.repos.d/
     sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    cd -
 }
 
 function check_root() {
@@ -84,10 +85,12 @@ function config_hostname() {
 
 function check_if_have_sudo() {
     echo -e " ${YELLOW} ====== Instalação do SUDO ====== ${NC}"
+    echo ""
     if [[ $CHECK_SUDO_PACKAGE = "" ]]
     then
         echo -e " ${YELLOW} O servidor não possui o pacote sudo instalado. Instalando o pacote sudo... ${NC}"
         sleep 2
+        echo ""
         yum -y install sudo
         echo ""  
     else
@@ -103,9 +106,9 @@ echo ""
 echo -e " ${BLUEL} ====== Script para Configuração Inicial de Servidores CentosOS 7 & 8 ====== ${NC}"
 echo ""
 
-#echo -e " ${YELLOW} ====== Habilitando Repositórios ====== ${NC}"
+echo -e " ${YELLOW} ====== Habilitando Repositórios ====== ${NC}"
 enabling_repos
-#echo ""
+echo ""
 
 #echo -e " ${YELLOW} ====== Verificando Hostname ====== ${NC}"
 #echo $MYHOSTNAME
