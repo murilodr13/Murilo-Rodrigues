@@ -69,7 +69,7 @@ function config_hostname() {
         sleep 3
         systemctl restart systemd-hostnamed
         sleep 3
-        bash
+        #bash
         echo ""
         echo -e " ${YELLOW} ====== Confirmando Alteração de Hostname ====== ${NC} "
         echo ""
