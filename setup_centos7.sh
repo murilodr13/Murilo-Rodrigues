@@ -14,7 +14,7 @@
 # v.1.0.8 - Adicionado correção (-y) no comando yum update  #
 #############################################################
 
-###########
+###################
 BLUEL="\033[1;34m"
 BLUE="\033[0;34m"
 GREEN="\033[0;32m"
@@ -23,6 +23,7 @@ RED="\033[0;31m"
 NC="\033[0m"
 $WHOAMI=whoami
 $HOSTNAME=hostname
+###################
 
 echo ""
 echo ""
