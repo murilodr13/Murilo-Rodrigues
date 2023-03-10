@@ -1,19 +1,20 @@
 #!/bin/bash
 
-#############################################################
-# Script para Configuração Inicial de Servidor CentosOS 7.x #
-#-----------------------------------------------------------#
-# v.1.0 - Criação do script.                                #
-# v.1.0.1 - Adicionado o comando yum.                       #
-# v.1.0.2 - Adicionado variáveis para cores                 #
-# v.1.0.3 - Adicionado layout de pular linhas               #
-# v.1.0.4 - Adicionado comandos para instalar rede          #
-# v.1.0.5 - Instalação SUDO e alteração de cores            #
-# v.1.0.6 - Instalação net-tools                            #
-# v.1.0.7 - Adicionado comando SU e reboot serviço host     #
-# v.1.0.8 - Adicionado correção (-y) no comando yum update  #
-# v.1.0.9 - Correção de variáveis e lógica                  #
-#############################################################
+##############################################################
+# Script para Configuração Inicial de Servidor CentosOS 7.x  #
+#------------------------------------------------------------#
+# v.1.0    - Criação do script.                              #
+# v.1.0.1  - Adicionado o comando yum.                       #
+# v.1.0.2  - Adicionado variáveis para cores                 #
+# v.1.0.3  - Adicionado layout de pular linhas               #
+# v.1.0.4  - Adicionado comandos para instalar rede          #
+# v.1.0.5  - Instalação SUDO e alteração de cores            #
+# v.1.0.6  - Instalação net-tools                            #
+# v.1.0.7  - Adicionado comando SU e reboot serviço host     #
+# v.1.0.8  - Adicionado correção (-y) no comando yum update  #
+# v.1.0.9  - Correção de variáveis e lógica                  #
+# v.1.0.10 - Adicionado a função que habilita repos          #
+##############################################################
 
 ##########################
 # Definição de Variáveis #
@@ -30,6 +31,11 @@ CHECK_SUDO_PACKAGE=$(yum list installed | grep -i "sudo")
 TIMESTAMP=$(date "+%m%d%Y-%H%M%S")
 ##########################
 
+function enabling_repos() {
+    cd /etc/yum.repos.d/
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+}
 
 function check_root() {
     echo ""
@@ -96,6 +102,10 @@ echo ""
 
 echo -e " ${BLUEL} ====== Script para Configuração Inicial de Servidores CentosOS 7 & 8 ====== ${NC}"
 echo ""
+
+#echo -e " ${YELLOW} ====== Habilitando Repositórios ====== ${NC}"
+enabling_repos
+#echo ""
 
 #echo -e " ${YELLOW} ====== Verificando Hostname ====== ${NC}"
 #echo $MYHOSTNAME
